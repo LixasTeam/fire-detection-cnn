@@ -127,3 +127,21 @@ If making use of this work in any way (including our [pretrained models](http://
 Atharva (Art) Deshmukh (Durham University, _github and data set collation for publication_).
 
 ---
+
+
+### known issues:  
+- issue 1  
+ `Traceback (most recent call last):
+  File "firenet.py", line 18, in <module>
+    import tflearn
+  File "/Users/leon/Documents/pyenv/py35/lib/python3.5/site-packages/tflearn/__init__.py", line 21, in <module>
+    from .layers import normalization
+  File "/Users/leon/Documents/pyenv/py35/lib/python3.5/site-packages/tflearn/layers/__init__.py", line 10, in <module>
+    from .recurrent import lstm, gru, simple_rnn, bidirectional_rnn, \
+  File "/Users/leon/Documents/pyenv/py35/lib/python3.5/site-packages/tflearn/layers/recurrent.py", line 8, in <module>
+    from tensorflow.contrib.rnn.python.ops.core_rnn import static_rnn as _rnn, \
+ImportError: No module named 'tensorflow.contrib.rnn.python.ops.core_rnn'`  
+
+how to fix: change line 8 in file 'lib/python3.5/site-packages/tflearn/layers/recurrent.py'  
+change `from tensorflow.contrib.rnn.python.ops.core_rnn import static_rnn as _rnn, \`  
+to `from tensorflow.contrib.rnn import static_rnn as _rnn, \`
